@@ -4,144 +4,187 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tech Gloves</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
+    /* Reset */
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-        font-family: 'Orbitron', sans-serif;
+        font-family: 'Roboto', sans-serif;
         background-color: #000;
         color: #fff;
         line-height: 1.6;
     }
 
-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 0;
-}.logo {
-    height: 70px; /* slightly bigger */
-    object-fit: contain;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 0;
+    }
 
-.logo:hover {
-    opacity: 0.9;
-    transform: scale(1.05);
-    filter: drop-shadow(0 0 6px rgba(255,255,255,0.3));
-}
+    .logo {
+        height: 80px;
+        object-fit: contain;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
+    .logo:hover {
+        opacity: 0.9;
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 8px rgba(255,255,255,0.3));
+    }
+
+    /* Hero Section */
     .hero {
-        height: 80vh;
+        min-height: 80vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
-        padding: 20px;
+        padding: 0 20px;
+        gap: 20px;
     }
-
-    .glove-placeholder {
-        width: 300px;
-        height: 300px;
-        border: 2px dashed #fff;
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-/* General image styles */
-img {
-    max-width: 100%; /* scale down to container */
-    height: auto;    /* maintain aspect ratio */
-    display: block;  /* remove inline spacing issues */
-    margin: 0 auto;  /* center image */
-}
-
-/* Specific images (if you have classes) */
-.glove-image, .gif-image {
-    max-width: 600px; /* optional desktop cap */
-    width: 100%;       /* full width on small screens */
-    height: auto;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-    .glove-image, .gif-image {
-        max-width: 90%; /* smaller screen, scale down */
-    }
-}
-
-@media (max-width: 480px) {
-    .glove-image, .gif-image {
-        max-width: 100%; /* fill container on tiny phones */
-    }
-}
 
     .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 10px;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 4rem;
+        font-weight: 700;
+        letter-spacing: 2px;
     }
 
     .hero p {
-        max-width: 600px;
-        opacity: 0.7;
+        max-width: 700px;
+        font-size: 1.2rem;
+        color: rgba(255,255,255,0.8);
     }
 
+    .hero img {
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Products Section */
     .section {
-        padding: 80px 20px;
-        max-width: 900px;
+        padding: 100px 20px;
+        max-width: 1000px;
         margin: auto;
     }
 
     .section h2 {
-        margin-bottom: 20px;
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2.5rem;
         font-weight: 500;
+        margin-bottom: 40px;
+        text-align: center;
     }
 
+    .products {
+        display: flex;
+        gap: 60px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .product {
+        flex: 1 1 300px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .product img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 12px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    }
+
+    .product h3 {
+        margin-top: 20px;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+    }
+
+    .product p {
+        margin-top: 10px;
+        font-size: 1rem;
+        color: rgba(255,255,255,0.7);
+    }
+
+    /* Buttons */
     .btn {
         margin-top: 20px;
-        padding: 12px 30px;
-        border: 1px solid #fff;
+        padding: 14px 35px;
+        border: 2px solid #fff;
         background: transparent;
         color: #fff;
+        font-weight: 500;
+        font-size: 1rem;
         cursor: pointer;
-        transition: 0.3s;
+        transition: all 0.3s ease;
+        border-radius: 6px;
     }
 
     .btn:hover {
         background: #fff;
         color: #000;
+        transform: scale(1.05);
     }
 
+    /* Forms */
     form {
         display: flex;
         flex-direction: column;
         gap: 15px;
         margin-top: 20px;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     input, textarea {
-        padding: 12px;
+        padding: 14px;
         background: #111;
         border: 1px solid #333;
         color: #fff;
+        border-radius: 6px;
+        font-size: 1rem;
     }
 
+    input:focus, textarea:focus {
+        outline: none;
+        border-color: #fff;
+    }
+
+    /* Footer */
     footer {
         border-top: 1px solid #222;
-        padding: 30px;
+        padding: 40px 20px;
         text-align: center;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
+        color: rgba(255,255,255,0.8);
     }
 
     .socials a {
-        margin: 0 10px;
+        margin: 0 12px;
         color: #fff;
         text-decoration: none;
+        font-weight: 500;
+        transition: opacity 0.3s ease;
     }
 
+    .socials a:hover {
+        opacity: 0.7;
+    }
+
+    /* Fade-in Animation */
     .fade-in {
         opacity: 0;
         transform: translateY(20px);
@@ -152,40 +195,46 @@ img {
         opacity: 1;
         transform: translateY(0);
     }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .hero h1 { font-size: 3rem; }
+        .hero p { font-size: 1.1rem; }
+        .products { gap: 30px; }
+    }
+
+    @media (max-width: 480px) {
+        .hero h1 { font-size: 2.2rem; }
+        .hero p { font-size: 1rem; }
+        .btn { padding: 12px 25px; font-size: 0.95rem; }
+    }
 </style>
 </head>
 <body>
 
 <header>
- <img src="images/logo copy WHITE.png" alt="LOGO" class="logo">
+    <img src="images/logo copy WHITE.png" alt="LOGO" class="logo">
 </header>
-   
-   <section class="hero">
+
+<section class="hero">
     <h1>THE FUTURE IN YOUR HANDS</h1>
-   
     <img src="images/Timelineglove-ezgif.com-video-to-gif-converter.gif" alt="Glove Animation">
-    
     <p>Engineered for control, precision, and connection. A seamless bridge between human movement and digital interaction.</p>
 </section>
-   
-<!-- PRODUCTS -->
-<section id="products" class="section fade">
+
+<section id="products" class="section fade-in">
     <h2>PRODUCTS</h2>
-
     <div class="products">
-
         <div class="product">
             <img src="images/echo-glove.PNG" alt="Echo Glove">
             <h3>ECHO GLOVE</h3>
             <p>Responsive. Adaptive. Designed to mirror movement and amplify interaction.</p>
         </div>
-
         <div class="product">
             <img src="images/tech-glove.JPG" alt="Tech Glove">
             <h3>TEK GLOVE</h3>
             <p>Precision engineering for seamless integration between body and machine.</p>
         </div>
-
     </div>
 </section>
 
@@ -230,7 +279,6 @@ img {
 <script>
     // Scroll animation
     const elements = document.querySelectorAll('.fade-in');
-
     window.addEventListener('scroll', () => {
         elements.forEach(el => {
             const position = el.getBoundingClientRect().top;
@@ -250,24 +298,3 @@ img {
 
 </body>
 </html>
-
-<!-- OPTIONAL PYTHON BACKEND (FLASK) -->
-<!--
-from flask import Flask, request, jsonify
-
-app = Flask(__name__)
-
-@app.route('/contact', methods=['POST'])
-def contact():
-    data = request.json
-    name = data.get('name')
-    email = data.get('email')
-    message = data.get('message')
-
-    # Here you would store or email the data
-
-    return jsonify({'status': 'success'})
-
-if __name__ == '__main__':
-    app.run(debug=True)
--->
