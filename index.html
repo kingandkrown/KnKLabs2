@@ -51,6 +51,33 @@ header {
         justify-content: center;
         align-items: center;
     }
+/* General image styles */
+img {
+    max-width: 100%; /* scale down to container */
+    height: auto;    /* maintain aspect ratio */
+    display: block;  /* remove inline spacing issues */
+    margin: 0 auto;  /* center image */
+}
+
+/* Specific images (if you have classes) */
+.glove-image, .gif-image {
+    max-width: 600px; /* optional desktop cap */
+    width: 100%;       /* full width on small screens */
+    height: auto;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .glove-image, .gif-image {
+        max-width: 90%; /* smaller screen, scale down */
+    }
+}
+
+@media (max-width: 480px) {
+    .glove-image, .gif-image {
+        max-width: 100%; /* fill container on tiny phones */
+    }
+}
 
     .hero h1 {
         font-size: 3rem;
