@@ -260,16 +260,38 @@
 
 <section class="section fade-in">
    <h2>CONTACT</h2>
-
-<form action="https://formspree.io/f/xojkvowl" method="POST">
-
-    <input type="text" name="name" placeholder="Name" required>
-
-    <input type="email" name="email" placeholder="Email" required>
-
-    <textarea name="message" rows="5" placeholder="Your message" required></textarea>
-<button class="btn" type="submit">Send</button>
+<form id="contact-form" action="https://formspree.io/f/xojkvowl" method="POST">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <textarea name="message" placeholder="Notes"></textarea>
+  <button type="submit">Send</button>
 </form>
+
+<script>
+  const form = document.getElementById('contact-form');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); // prevent default page reload
+    const data = new FormData(form);
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        console.log('Message sent successfully!'); // optional debug
+        form.reset(); // clear the form fields
+      } else {
+        console.error('Error sending message');
+      }
+    } catch (error) {
+      console.error('Network error', error);
+    }
+  });
+</script>
 </section>
 
 <footer>
