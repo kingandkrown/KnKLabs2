@@ -1,1 +1,298 @@
-txt
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Echo Glove</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Roboto',sans-serif;
+background:#000;
+color:#fff;
+line-height:1.6;
+}
+
+/* Header */
+
+header{
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+}
+
+.logo{
+height:80px;
+transition:0.3s;
+}
+
+.logo:hover{
+transform:scale(1.05);
+opacity:0.9;
+}
+
+/* Hero */
+
+.hero{
+min-height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px 20px;
+}
+
+.hero h1{
+font-family:'Orbitron',sans-serif;
+font-size:3.5rem;
+margin-bottom:20px;
+letter-spacing:2px;
+}
+
+.hero p{
+max-width:700px;
+font-size:1.2rem;
+opacity:0.8;
+margin-top:20px;
+}
+
+.hero img{
+max-width:500px;
+width:100%;
+margin:30px 0;
+}
+
+/* Sections */
+
+.section{
+max-width:1000px;
+margin:auto;
+padding:100px 20px;
+text-align:center;
+}
+
+.section h2{
+font-family:'Orbitron',sans-serif;
+font-size:2.2rem;
+margin-bottom:30px;
+}
+
+.section p{
+max-width:700px;
+margin:auto;
+font-size:1.1rem;
+opacity:0.8;
+}
+
+/* Features */
+
+.features{
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+justify-content:center;
+margin-top:50px;
+}
+
+.feature{
+flex:1 1 250px;
+max-width:300px;
+}
+
+.feature h3{
+font-size:1.4rem;
+margin-bottom:10px;
+}
+
+.feature p{
+font-size:0.95rem;
+opacity:0.7;
+}
+
+/* Button */
+
+.btn{
+margin-top:40px;
+padding:14px 36px;
+border:1px solid #fff;
+background:transparent;
+color:#fff;
+font-size:1rem;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#fff;
+color:#000;
+}
+
+/* Footer */
+
+footer{
+border-top:1px solid #222;
+padding:40px;
+text-align:center;
+font-size:0.9rem;
+opacity:0.7;
+}
+
+/* Animations */
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.section{
+padding:70px 20px;
+}
+
+.hero img{
+max-width:350px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="index.html">
+<img src="images/logo copy WHITE.png" class="logo">
+</a>
+</header>
+
+
+<section class="hero fade">
+
+<h1>ECHO GLOVE</h1>
+
+<img src="images/echo-glove.PNG" alt="Echo Glove">
+
+<p>
+The Echo Glove is designed to mirror movement and translate human motion into digital interaction.
+Built for precision, responsiveness, and intuitive control.
+</p>
+
+<button class="btn">Request Information</button>
+
+</section>
+
+
+<section class="section fade">
+
+<h2>DESIGNED FOR INTUITION</h2>
+
+<p>
+Traditional interfaces create distance between intention and execution.
+Echo Glove removes that barrier by turning your hand into the interface.
+Every movement becomes a command. Every gesture becomes communication.
+</p>
+
+</section>
+
+
+<section class="section fade">
+
+<h2>KEY FEATURES</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>Motion Precision</h3>
+<p>
+Advanced sensors capture subtle finger and hand movement for highly accurate interaction.
+</p>
+</div>
+
+<div class="feature">
+<h3>Real-Time Response</h3>
+<p>
+Low latency processing allows seamless translation of motion into digital commands.
+</p>
+</div>
+
+<div class="feature">
+<h3>Adaptive Design</h3>
+<p>
+Built to integrate with creative tools, immersive environments, and future interfaces.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section fade">
+
+<h2>APPLICATIONS</h2>
+
+<p>
+Echo Glove is built for a wide range of environments including creative production,
+virtual interaction, robotics control, immersive systems, and advanced digital interfaces.
+</p>
+
+</section>
+
+
+<footer>
+
+<p>King & Krown Technologies</p>
+<p>Contact: kingnkrown@gmail.com</p>
+
+</footer>
+
+
+<script>
+
+const elements = document.querySelectorAll(".fade");
+
+window.addEventListener("scroll",()=>{
+
+elements.forEach(el=>{
+
+const position = el.getBoundingClientRect().top;
+
+if(position < window.innerHeight - 100){
+
+el.classList.add("show");
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
