@@ -261,24 +261,14 @@
 <section class="section fade-in">
    <h2>CONTACT</h2>
 
-<form
-  action="https://formspree.io/f/xojkvowl"
-  method="POST"
->
-  <label>
-    Name:
-    <input type="name" name="name">
-  </label>
-    <label>
-  Email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
+<form action="https://formspree.io/f/xojkvowl" method="POST">
+
+    <input type="text" name="name" placeholder="Name" required>
+
+    <input type="email" name="email" placeholder="Email" required>
+
+    <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+<button class="btn" type="submit">Send</button>
 </form>
 </section>
 
