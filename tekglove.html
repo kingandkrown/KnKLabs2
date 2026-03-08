@@ -1,1 +1,297 @@
-txt
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEK Glove</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@300;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Roboto',sans-serif;
+background:#000;
+color:#fff;
+line-height:1.6;
+}
+
+/* HEADER */
+
+header{
+display:flex;
+justify-content:center;
+align-items:center;
+padding:40px 20px;
+}
+
+.logo{
+height:80px;
+transition:0.3s;
+}
+
+.logo:hover{
+transform:scale(1.05);
+opacity:0.9;
+}
+
+/* HERO */
+
+.hero{
+min-height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px 20px;
+}
+
+.hero h1{
+font-family:'Orbitron',sans-serif;
+font-size:3.5rem;
+letter-spacing:2px;
+margin-bottom:20px;
+}
+
+.hero img{
+max-width:520px;
+width:100%;
+margin:30px 0;
+}
+
+.hero p{
+max-width:700px;
+font-size:1.2rem;
+opacity:0.8;
+}
+
+/* SECTIONS */
+
+.section{
+max-width:1000px;
+margin:auto;
+padding:100px 20px;
+text-align:center;
+}
+
+.section h2{
+font-family:'Orbitron',sans-serif;
+font-size:2.2rem;
+margin-bottom:30px;
+}
+
+.section p{
+max-width:700px;
+margin:auto;
+font-size:1.1rem;
+opacity:0.8;
+}
+
+/* FEATURES GRID */
+
+.features{
+display:flex;
+flex-wrap:wrap;
+gap:40px;
+justify-content:center;
+margin-top:50px;
+}
+
+.feature{
+flex:1 1 260px;
+max-width:300px;
+}
+
+.feature h3{
+font-size:1.4rem;
+margin-bottom:10px;
+}
+
+.feature p{
+font-size:0.95rem;
+opacity:0.7;
+}
+
+/* BUTTON */
+
+.btn{
+margin-top:40px;
+padding:14px 36px;
+border:1px solid #fff;
+background:transparent;
+color:#fff;
+font-size:1rem;
+cursor:pointer;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#fff;
+color:#000;
+}
+
+/* FOOTER */
+
+footer{
+border-top:1px solid #222;
+padding:40px;
+text-align:center;
+font-size:0.9rem;
+opacity:0.7;
+}
+
+/* SCROLL ANIMATION */
+
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.hero img{
+max-width:350px;
+}
+
+.section{
+padding:70px 20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<a href="index.html">
+<img src="images/logo copy WHITE.png" class="logo">
+</a>
+</header>
+
+
+<section class="hero fade">
+
+<h1>TEK GLOVE</h1>
+
+<img src="images/tech-glove.JPG" alt="TEK Glove">
+
+<p>
+The TEK Glove is built for high-precision digital interaction. Designed for engineering,
+advanced control systems, and immersive technologies where accuracy and responsiveness matter.
+</p>
+
+<button class="btn">Request Information</button>
+
+</section>
+
+
+<section class="section fade">
+
+<h2>ENGINEERED FOR CONTROL</h2>
+
+<p>
+The TEK Glove transforms complex digital systems into intuitive hand-based interaction.
+From robotics to immersive environments, the glove bridges the gap between physical motion
+and digital command.
+</p>
+
+</section>
+
+
+<section class="section fade">
+
+<h2>CORE TECHNOLOGY</h2>
+
+<div class="features">
+
+<div class="feature">
+<h3>Sensor Mapping</h3>
+<p>
+Advanced motion sensors track hand and finger movement with extreme accuracy.
+</p>
+</div>
+
+<div class="feature">
+<h3>Real-Time Processing</h3>
+<p>
+Ultra-low latency ensures every movement translates instantly into digital response.
+</p>
+</div>
+
+<div class="feature">
+<h3>System Integration</h3>
+<p>
+Compatible with future interaction systems including robotics, simulation, and immersive environments.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section fade">
+
+<h2>APPLICATIONS</h2>
+
+<p>
+TEK Glove can be used in engineering control environments, immersive digital design,
+robotics interfaces, simulation platforms, and next-generation human-machine interaction systems.
+</p>
+
+</section>
+
+
+<footer>
+
+<p>King & Krown Technologies</p>
+<p>Contact: kingnkrown@gmail.com</p>
+
+</footer>
+
+
+<script>
+
+const elements = document.querySelectorAll(".fade");
+
+window.addEventListener("scroll",()=>{
+
+elements.forEach(el=>{
+
+const position = el.getBoundingClientRect().top;
+
+if(position < window.innerHeight - 100){
+
+el.classList.add("show");
+
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
